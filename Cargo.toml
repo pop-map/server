@@ -13,6 +13,11 @@ version = "0.4"
 version = "1"
 features = [ "full" ]
 
-[dependencies.service]
-git = "https://github.com/pop-map/service"
-rev = "09203f0"
+[dependencies.popmap]
+git = "https://github.com/pop-map/popmap"
+rev = "0a73061"
+features = [ ]
+
+[dev-dependencies]
+uuid = "1.2"
+serde_json = "1"

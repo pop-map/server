@@ -1,10 +1,15 @@
 use std::sync::Arc;
 
+mod service;
+
 use service::Rejection;
 use service::Service;
 use service::Uuid;
 
 use warp::{filters::BoxedFilter, http::StatusCode, Filter, Reply};
+
+#[cfg(test)]
+mod tests;
 
 macro_rules! handle_method {
     (GET) => {
