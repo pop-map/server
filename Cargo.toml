@@ -16,4 +16,3 @@ features = [ "full" ]
 [dependencies.service]
 git = "https://github.com/pop-map/service"
 rev = "0493ab2"
-features = [ "fake_auth" ]
