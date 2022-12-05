@@ -69,6 +69,9 @@ fn build_server() -> BoxedFilter<(impl Reply,)> {
     let service = Arc::new(Service::new());
     let service = warp::any().map(move || service.clone());
     routes![
+        warp::get().and(warp::path::end()).map(|| warp::reply::json(
+            &"Welcome to the PopMap API ! Visit https://github.com/pop-map/popmap for API usage"
+        )),
         handle!(service POST ["pop"] JSON 1024 * 16)
             .map(|service: Arc<Service>, pop| service.post_a_new_pop(pop))
             .map(reply!(CREATED)),
